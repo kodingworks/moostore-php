@@ -108,7 +108,10 @@ abstract class AbstractRequest implements RequestInterface
         if ($data) {
             $options['json'] = $data;
             try {
-                if (in_array(array_keys($data)[0], ['form_params', 'json', 'body', 'multipart'])) {
+                if (isset(array_keys($data)[0])
+                    && !is_int(array_keys($data)[0])
+                    && in_array(array_keys($data)[0], ['form_params', 'json', 'body', 'multipart'])
+                ) {
                     unset($options['json']);
                     $options = array_merge($options, $data);
                 }

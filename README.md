@@ -66,5 +66,3 @@ Request handle and manipulate parameter that should be sent to destination
 ##### Response
 
 Response handle and formatting the data that received from the previous process
-
-
